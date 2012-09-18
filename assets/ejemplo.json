@@ -1,0 +1,18 @@
+{
+    "id": 1,
+    "firstname": "John",
+    "lastname": "Doe",
+    "phonelist": [
+        "885512555",
+        "885512556",
+        "885512557"
+    ],
+    "birthdate": "1970-01-24",
+    "weight": 120,
+    "height": 5.75,
+    "location": {
+        "city": "SanJose",
+        "state": "SanJose",
+        "country": "Costa Rica"
+    }
+}

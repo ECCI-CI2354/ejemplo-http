@@ -1,0 +1,17 @@
+<user id="1">
+    <firstname>John</firstname>
+    <lastname>Doe</lastname>
+    <phonelist>
+        <phone>885512555</phone>
+        <phone>885512556</phone>
+        <phone>885512557</phone>
+    </phonelist>
+    <birthdate>1970-01-24</birthdate>
+    <weight>120</weight>
+    <height>5.75</height>
+    <location>
+        <city>San Jose</city>
+        <state>San Jose</state>
+        <country>Country</country>
+    </location>
+</user>
