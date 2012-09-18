@@ -9,6 +9,7 @@ import java.io.InputStream;
  *
  */
 public interface DataParser {
+    public static final String TAG = "DataParser";
     
     /**
      * Gets an user object from InputStream

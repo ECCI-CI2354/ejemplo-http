@@ -28,7 +28,12 @@ public class MainActivity extends Activity {
     }
 
     public void parseDom(View view) {
-        ParseFileTask task = new ParseFileTask( new DomDataParser() );
+        ParseFileTask task = new ParseFileTask(new DomDataParser());
+        task.execute("ejemplo.xml");
+    }
+
+    public void parseXPP(View view) {
+        ParseFileTask task = new ParseFileTask(new XPPDataParser());
         task.execute("ejemplo.xml");
     }
 
@@ -58,8 +63,8 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPostExecute(User result) {
-            if (result != null){
-                
+            if (result != null) {
+                Log.d(TAG, "User: " + result.toString());
             } else {
                 Toast.makeText(MainActivity.this, "Unable to load user", Toast.LENGTH_SHORT).show();
             }
@@ -70,8 +75,6 @@ public class MainActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
         }
-        
-        
 
     }
 }

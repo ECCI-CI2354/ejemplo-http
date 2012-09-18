@@ -1,5 +1,6 @@
 package cr.ac.ucr.ecci.ci2354.netsamples;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class User {
@@ -81,6 +82,13 @@ public class User {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", phonelist="
+                + Arrays.toString(phonelist) + ", birthdate=" + birthdate + ", weight=" + weight + ", height=" + height
+                + ", location=" + location + "]";
     }
 
 }

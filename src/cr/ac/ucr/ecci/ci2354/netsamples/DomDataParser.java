@@ -18,7 +18,6 @@ import org.xml.sax.SAXException;
 import android.util.Log;
 
 public class DomDataParser implements DataParser {
-    public static final String TAG = DomDataParser.class.getName();
 
     @Override
     public User parseUser(InputStream in) throws DataParseException {
@@ -48,7 +47,9 @@ public class DomDataParser implements DataParser {
             user.setLastname(lastname);
 
             //Phone list
-            String[] phonelist = getTagValues("phonelist", (Element) root).toArray(new String[] {});
+            Node phoneListNode = getNodeByTag("phonelist", (Element) root);
+            
+            String[] phonelist = getTagValues("phone", (Element) phoneListNode).toArray(new String[] {});
             Log.d(TAG, "User phone list size: " + phonelist.length);
             user.setPhonelist(phonelist);
 
@@ -72,15 +73,18 @@ public class DomDataParser implements DataParser {
         return nValue.getNodeValue();
     }
 
+    private static Node getNodeByTag(String sTag, Element eElement){
+        return eElement.getElementsByTagName(sTag).item(0);
+        
+    }
     private static List<String> getTagValues(String sTag, Element eElement) {
-        NodeList nlList = eElement.getElementsByTagName(sTag).item(0).getChildNodes();
+        NodeList nlList = eElement.getElementsByTagName(sTag);
 
         List<String> values = new LinkedList<String>();
         for (int i = 0; i < nlList.getLength(); i++) {
-            Node nValue = (Node) nlList.item(i);
-            if (nValue.getNodeType() == Node.ELEMENT_NODE) {
-                values.add(nValue.getNodeValue());
-            }
+            NodeList subList = nlList.item(i).getChildNodes();
+            Node nValue = subList.item(0);
+            values.add(nValue.getNodeValue());
         }
         return values;
     }
