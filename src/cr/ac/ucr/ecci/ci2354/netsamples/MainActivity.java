@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +37,17 @@ public class MainActivity extends Activity {
     public void parseXPP(View view) {
         ParseFileTask task = new ParseFileTask(new XPPDataParser());
         task.execute("ejemplo.xml");
+    }
+
+    public void downloadManager(View view) {
+        DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+
+        Uri uri = Uri.parse("http://www.nacion.com/Generales/RSS/EdicionRss.aspx?section=elpais");
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        long id = manager.enqueue(request);
+        
+        
+        
     }
 
     class ParseFileTask extends AsyncTask<String, Void, User> {
