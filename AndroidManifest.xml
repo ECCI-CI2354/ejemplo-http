@@ -8,6 +8,7 @@
         android:targetSdkVersion="15" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -22,9 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name="cr.ac.ucr.ecci.ci2354.netsamples.ConnectionChangeReceiver" android:exported="false">
+
+        <receiver
+            android:name="cr.ac.ucr.ecci.ci2354.netsamples.ConnectionChangeReceiver"
+            android:exported="false" >
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVTIY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVTIY_CHANGE" />
             </intent-filter>
         </receiver>
     </application>

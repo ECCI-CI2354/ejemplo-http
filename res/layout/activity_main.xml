@@ -1,9 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:orientation="vertical"
-    >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <Button
         android:id="@+id/button1"
@@ -11,11 +10,24 @@
         android:layout_height="wrap_content"
         android:onClick="parseDom"
         android:text="DOM" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="parseXPP"
         android:text="XML Pull Parse" />
-    
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loadImage"
+        android:text="Load Image" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
 </LinearLayout>

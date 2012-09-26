@@ -3,16 +3,19 @@ package cr.ac.ucr.ecci.ci2354.netsamples;
 import java.util.Arrays;
 import java.util.Date;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User {
     private int id;
 
+//    @SerializedName("FIRSTNAME")
     private String firstname;
 
     private String lastname;
 
     private String[] phonelist;
 
-    private Date birthdate;
+    private String birthdate;
 
     private float weight;
 
@@ -52,11 +55,11 @@ public class User {
         this.phonelist = phonelist;
     }
 
-    public Date getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 
